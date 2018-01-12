@@ -1,0 +1,49 @@
+<!--
+  Generated template for the ProductDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar style="opacity: 0.8" no-border-bottom color="primary">
+    <ion-title>商品详情</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="share($event)">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-row>
+    <ion-col>
+      <img src="{{selectedItem.PictUrl}}" alt="">
+    </ion-col>
+  </ion-row>
+  <div class="item-good">
+    <div class="list-price buy">
+      <span class="price-new ml"><i>￥</i>{{selectedItem.ZkFinalPrice}}</span>
+      <i class="del f14 ml2">￥{{selectedItem.ReservePrice}}</i>
+    </div>
+    <h1>{{selectedItem.Title}}</h1>
+  </div>
+  <!--<ion-item>-->
+
+    <!--<button ion-button  primary  (click)="goBuy()">去抢购</button>-->
+  <!--</ion-item>-->
+  <ion-row>
+    <ion-col col-2></ion-col>
+    <ion-col col-3>
+      <button ion-button  primary  (click)="addShopCar()" >加入购物车</button>
+    </ion-col>
+    <ion-col col-2></ion-col>
+    <ion-col col-3>
+      <button ion-button  color="danger"  (click)="goBuy()" >立即购买</button>
+    </ion-col>
+    <ion-col col-2></ion-col>
+  </ion-row>
+
+  <div *ngFor="let img of imgs">
+    <img src="{{img}}" alt="">
+  </div>
+</ion-content>

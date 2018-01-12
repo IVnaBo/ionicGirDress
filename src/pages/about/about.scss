@@ -1,0 +1,52 @@
+page-about {
+
+.head_back{
+  //width: 100%;
+  position: relative;
+  height: 150px;
+  //background-color: #2ec95c;
+  text-align: center;
+  background: #5bc0de;
+  //background: #fff;
+
+}
+  .placehoderv{
+    width: 100%;
+    height: 20%;
+    //
+  }
+  .head_icon{
+    //position: absolute;
+    //top:20%;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;//圆形
+    display: block;
+    margin: 0 auto;
+
+  }
+ .head_grid{
+   ion-row{
+     padding: 0;
+     text-align: center;
+   }
+   img{
+     width: 30px;
+     height: 30px;
+   }
+ }
+  .auth_view{
+    position: absolute;
+    top:38%;
+    width: 40%;
+    margin: 0 auto;
+   left: 30%;
+    right: 30%;
+    text-align: center;
+
+  }
+  .login_btn{
+
+
+  }
+}

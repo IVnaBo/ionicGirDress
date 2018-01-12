@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      个人中心
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="toSettingPage()">设置</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div *ngIf="isLogin">
+
+<div class="head_back">
+  <!--<img src="../../assets/imgs/u4.png" class="head_back_img">-->
+  <div class="placehoderv"></div>
+  <img src="../../assets/imgs/socute.png" tappable class="head_icon"  (click)="takePhoto()">
+  <p>133谁吖</p>
+</div>
+
+
+<ion-grid class="head_grid">
+  <ion-row wrap>
+    <ion-col col-4>
+      <img src="../../assets/imgs/u113.png">
+      <p>我的订单</p>
+    </ion-col>
+    <ion-col col-4>
+      <img src="../../assets/imgs/u115.png">
+      <p>我的购物车</p>
+    </ion-col>
+    <ion-col col-4>
+      <img src="../../assets/imgs/u117.png">
+      <p>我的售后</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of listArr;let i=index" (click)="listItemClick(i)">{{item}}</button>
+  </ion-list>
+  </div>
+
+  <div class="auth_view" *ngIf="!isLogin">
+    <p>你还没有登录....</p>
+    <button ion-button block class="login_btn" (click)="loginBtnAction()" >
+      登录
+    </button>
+  </div>
+
+
+
+
+</ion-content>

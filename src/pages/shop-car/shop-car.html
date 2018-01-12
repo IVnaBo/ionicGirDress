@@ -1,0 +1,50 @@
+<!--
+  Generated template for the ShopCarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>购物车</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content fullscreen>
+ <ion-grid>
+   <ion-row *ngFor="let item of shopArr;let i=index" (click)="carItemClick(i)">
+     <ion-col col-1 class="left_box">
+      <ion-checkbox color="danger" [ngModel]="item.isCheck" (ionChange)="updateCheckState(i)"></ion-checkbox>
+     </ion-col>
+     <ion-col col-11>
+       <ion-list no-lines>
+         <ion-item>
+           <ion-thumbnail item-start>
+             <img src="{{item.shopItem?.PictUrl}}">
+           </ion-thumbnail>
+           <!--<h2>My Neighbor Totoro</h2>-->
+           <p>{{item.shopItem?.Title}}</p>
+           <p>￥{{item.shopItem?.ZkFinalPriceWap}}</p>
+         <ion-buttons item-end>
+           <button ion-button  start (click)="reduceAction(i,$event)">-</button>
+          <span>{{item.num}}</span>
+           <button ion-button  end (click)="addAction(i,$event)">+</button>
+         </ion-buttons>
+
+         </ion-item>
+       </ion-list>
+     </ion-col>
+   </ion-row>
+ </ion-grid>
+
+
+  <ion-item class="account_v">
+    <ion-checkbox item-start color="danger" (ionChange)="allCheck()" [ngModel]="isAllCheck" ></ion-checkbox>
+    <ion-label>合计:{{allPrice}}</ion-label>
+    <button ion-button item-end class="account_btn" color="danger" (click)="calculatorAction()">去结算{{allPrice}}</button>
+  </ion-item>
+
+</ion-content>

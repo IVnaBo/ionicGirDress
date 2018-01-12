@@ -1,0 +1,25 @@
+page-shop-car {
+  ion-content{
+    position: relative;
+  }
+  ion-grid{
+    //height: 90%;
+  }
+
+ .left_box{
+   position: relative;
+   ion-checkbox{
+     position: absolute;
+     top:33%;
+   }
+ }
+ .account_btn{
+   //background-color: red;
+ }
+  .account_v{
+    position: fixed;
+    bottom: 45px;
+  }
+
+
+}

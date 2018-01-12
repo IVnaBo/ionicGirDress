@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="primary" style="opacity: 0.8" no-border-bottom color="primary">
+    <ion-title>首页</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content fullscreen>
+
+  <ion-row *ngIf="spinner1">
+    <ion-col text-center>
+      <ion-spinner class="spinner-energized"></ion-spinner>
+    </ion-col>
+  </ion-row>
+<!-- 轮播图 -->
+  <ion-slides >
+    <ion-slide *ngFor="let item of slides" (click)="goDetails(item)">
+      <img src="{{item.PictUrl}}" alt="">
+      <div class="cover"></div>
+      <span class="title">{{item.Title}}</span>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="categories">
+    <ion-grid>
+      <ion-row wrap>
+        <!-- 12 3 4  -->
+        <ion-col text-center tappable col-3 *ngFor="let c of categories" (click)="goProductList(c)">
+          <i class="iconfont {{c.Icon}} icon"></i>
+          <span class="title">{{c.FavoritesTitle}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+ <!-- 设置组头标题 -->
+  <ion-item-divider class="t-header" color="light"> 年会礼服2017年新款 </ion-item-divider>
+  <!--<img src="../../assets/imgs/beautify.jpg" class="divider_img" >-->
+  <!-- 使用组件   -->
+  <ion-products [products]="products"></ion-products>
+
+</ion-content>
+

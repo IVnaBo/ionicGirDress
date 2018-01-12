@@ -1,0 +1,51 @@
+<!--
+  Generated template for the ForgotPwdPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{headTitle}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <img src="../../assets/imgs/socute.png" class="logo_img" *ngIf="isShowIcon">
+
+<ion-list no-lines="true">
+  <ion-row>
+    <ion-item>
+      <ion-label floating>手机号:</ion-label>
+      <!-- 值绑定 -->
+      <ion-input type="tel" clearInput  [(ngModel)]="codeParam.usertel"></ion-input>
+      <button ion-button item-right round [disabled]="!verifyCode.disable" (click)="getCode()">{{verifyCode.verifyCodeTips}}</button>
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <ion-item>
+      <ion-label floating>验证码:</ion-label>
+      <ion-input type="number" [(ngModel)]="params.vcode" ></ion-input>
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <ion-item>
+      <ion-label floating>密码:</ion-label>
+      <ion-input type="password" clearInput [(ngModel)]="params.newpass"></ion-input>
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <ion-item>
+      <ion-label floating>确认密码:</ion-label>
+      <ion-input type="password" clearInput [(ngModel)]="params.sure_pwd"></ion-input>
+    </ion-item>
+  </ion-row>
+
+</ion-list>
+  <button ion-button round block (click)="doReset()">{{headTitle}}</button>
+
+</ion-content>

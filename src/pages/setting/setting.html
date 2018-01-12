@@ -1,0 +1,36 @@
+<!--
+  Generated template for the SettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>设置</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+  <ion-item>
+    <ion-label>推送设置</ion-label>
+    <ion-toggle item-end></ion-toggle>
+  </ion-item>
+  <button ion-item (click)="getStorageData()" >
+    修改密码
+  </button>
+
+  <button ion-item (click)="removeShopInfo()">
+    清空购物车数据
+  </button>
+
+</ion-list>
+
+  <button ion-button block (click)="logoutAction()">
+    {{isLogin ? "退出登录" :"登录"}}
+  </button>
+
+</ion-content>
