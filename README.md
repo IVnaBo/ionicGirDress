@@ -1,5 +1,5 @@
 # ionicGirDress
-ionic女装尖货
+ionic仿女装尖货
 1.根据ionicBlog学习ionic3基本组件。。
 2.自己加了点东西 主要是Storage的使用及一些常用指令的使用。(真正的项目中不会使用Storage存储太多东西，一般数据只需要网络请求后台服务器,购物车这块还在更新...)
 ![首页](https://github.com/IVnaBo/ionicGirDress/blob/master/src/DCIM(7).jpg)
